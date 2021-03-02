@@ -9,25 +9,43 @@
     <link rel="stylesheet" href="css/fontello.css">
     
     <style>
-        /* *{
+        *{
             box-sizing:border-box;
+        }
+/*         
+        body{
+            margin:0;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width:100%;
+            height:100%;
         } */
-        
+        .glowna{
+            margin:auto;
+
+            display:flex;
+            width: 50%;
+            justify-content: center;
+            /* align-items: center; */
+            flex-direction: column;
+        }
         .strona{
-            border:1px solid black;
+            border:2px solid black;
             padding-bottom: 30px;
         }
 
         .grid{
             display:grid;
-            /* grid-template-rows: 2fr 2fr; 
-            grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-rows: 1fr 1fr; 
+            grid-template-columns: 2fr 2fr 2fr;
             grid-template-areas:
             "P1 P2 P3"
             "P4 P5 P3";
-            
-            padding-left: 30%;
-            padding-right: 30%;
+            margin:10px;
+            /* padding-left: 30%;
+            padding-right: 30%; */
             gap:20px;
             
         }
@@ -46,20 +64,24 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            border: 1px solid black;
+            border: 2px solid black;
             height:100%;
+            
         
             
 
         }
         .grid a i{
-            padding-top:20px;
-            padding-bottom:20px;
+            padding-top:10px;
+            padding-bottom:10px;
             text-align:center;
+            font-size:1.5em;
+            margin:10px;
         }
 
         .footer{
-            border:1px solid black;
+            
+            border:2px solid black;
             border-top:none;
             text-align:right;
         }
@@ -69,6 +91,7 @@
                 font-size:1em;
             }
             .grid {
+            margin:15%;
             grid-template-areas: 
             "P1"
             "P2"
@@ -80,7 +103,7 @@
         }
         
         .Front{
-            margin-left: 30%;
+            margin-left: 10px;
         }
 
 
@@ -98,56 +121,57 @@
     <i class="icon-network"></i><br />
     <i class="icon-progress-3"></i><br /> 
 -->
-    
-<div class="strona">
-    <div class="Front">
-        <h3>Front Webdeveloper</h3>
-    </div>
+<div class="glowna">   
+    <div class="strona">
+        <div class="Front">
+            <h5>Front Webdeveloper</h5>
+        </div>
 
-    <div class="grid">
-        
-                <a href="#" class="link">
-                    <i class="icon-flight"><br />
-                        SAMOLOTY
-                    </i>
+        <div class="grid">
+            
+                    <a href="#" class="link">
+                        <i class="icon-flight"><br />
+                            Samoloty
+                        </i>
+                        
+                    </a>
                     
-                </a>
-                
 
-                <a href="#" class="link">
-                    <i class="icon-target"><br />
-                        CELOWNIK
-                    </i>
-                
-                </a>
+                    <a href="#" class="link">
+                        <i class="icon-target"><br />
+                            Celownik
+                        </i>
+                    
+                    </a>
 
-                <a href="#" class="link">
-                    <i class="icon-ticket"><br />
-                        BILETY
-                    </i>
-                
-                </a>
+                    <a href="#" class="link">
+                        <i class="icon-ticket"><br />
+                            Bilety
+                        </i>
+                    
+                    </a>
 
-                <a href="#" class="link">
-                    <i class="icon-network"><br />
-                        SIEC
-                    </i>
-                
-                </a>
+                    <a href="#" class="link">
+                        <i class="icon-network"><br />
+                            Siec
+                        </i>
+                    
+                    </a>
 
-                <a href="#" class="link">
-                    <i class="icon-progress-3"><br />
-                        STAN BATERII
-                    </i>
-                
-                </a>
+                    <a href="#" class="link">
+                        <i class="icon-progress-3"><br />
+                            Stan Baterii 
+                        </i>
+                    
+                    </a>
 
 
 
+        </div>
     </div>
+    <div class="footer">
+        Copyright by Daniel 2021
 </div>
-<div class="footer">
-    Copyright by Daniel 2021
 </div>
 </body>
 </html>
