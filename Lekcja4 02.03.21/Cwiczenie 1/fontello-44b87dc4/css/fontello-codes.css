@@ -1,0 +1,6 @@
+
+.icon-target:before { content: '\e800'; } /* '' */
+.icon-flight:before { content: '\e801'; } /* '' */
+.icon-ticket:before { content: '\e802'; } /* '' */
+.icon-network:before { content: '\e803'; } /* '' */
+.icon-progress-3:before { content: '\e804'; } /* '' */

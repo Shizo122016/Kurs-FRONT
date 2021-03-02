@@ -1,0 +1,40 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "3eadc3e443cf1c7e17f1b44d21254c00",
+      "css": "target",
+      "code": 59392,
+      "src": "entypo"
+    },
+    {
+      "uid": "6e8aea8fff9525dfc5149f0c03669091",
+      "css": "flight",
+      "code": 59393,
+      "src": "entypo"
+    },
+    {
+      "uid": "333bae7aaf7395d1004875be5a075661",
+      "css": "ticket",
+      "code": 59394,
+      "src": "entypo"
+    },
+    {
+      "uid": "414fe97e4af5215a06d29be0f2cecdf5",
+      "css": "network",
+      "code": 59395,
+      "src": "entypo"
+    },
+    {
+      "uid": "d924bc68683f68ecf5e09e49731fd59a",
+      "css": "progress-3",
+      "code": 59396,
+      "src": "entypo"
+    }
+  ]
+}

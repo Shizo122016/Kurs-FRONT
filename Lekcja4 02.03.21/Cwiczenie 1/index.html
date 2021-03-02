@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ikony
+    </title>
+    <link rel="stylesheet" href="css/fontello.css">
+    
+    <style>
+        /* *{
+            box-sizing:border-box;
+        } */
+        
+        .strona{
+            border:1px solid black;
+            padding-bottom: 30px;
+        }
+
+        .grid{
+            display:grid;
+            /* grid-template-rows: 2fr 2fr; 
+            grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-areas:
+            "P1 P2 P3"
+            "P4 P5 P3";
+            
+            padding-left: 30%;
+            padding-right: 30%;
+            gap:20px;
+            
+        }
+
+
+        .grid a:nth-child(1){grid-area: P1;}
+        .grid a:nth-child(2){grid-area: P2;}
+        .grid a:nth-child(3){grid-area: P3;}
+        .grid a:nth-child(4){grid-area: P4;}
+        .grid a:nth-child(5){grid-area: P5;}
+
+        .grid a{
+            text-decoration: none;
+            color:black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid black;
+            height:100%;
+        
+            
+
+        }
+        .grid a i{
+            padding-top:20px;
+            padding-bottom:20px;
+            text-align:center;
+        }
+
+        .footer{
+            border:1px solid black;
+            border-top:none;
+            text-align:right;
+        }
+        
+        @media (max-width:500px){
+            i{
+                font-size:1em;
+            }
+            .grid {
+            grid-template-areas: 
+            "P1"
+            "P2"
+            "P3"
+            "P4"
+            "P5";
+
+            }
+        }
+        
+        .Front{
+            margin-left: 30%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <a href="#" class="link">
+        <i class="icon-target"></i>
+        CELOWNIK
+    </a><br />
+     -->
+    <!-- 
+        <i class="icon-flight"></i><br />
+    <i class="icon-ticket"></i><br />
+    <i class="icon-network"></i><br />
+    <i class="icon-progress-3"></i><br /> 
+-->
+    
+<div class="strona">
+    <div class="Front">
+        <h3>Front Webdeveloper</h3>
+    </div>
+
+    <div class="grid">
+        
+                <a href="#" class="link">
+                    <i class="icon-flight"><br />
+                        SAMOLOTY
+                    </i>
+                    
+                </a>
+                
+
+                <a href="#" class="link">
+                    <i class="icon-target"><br />
+                        CELOWNIK
+                    </i>
+                
+                </a>
+
+                <a href="#" class="link">
+                    <i class="icon-ticket"><br />
+                        BILETY
+                    </i>
+                
+                </a>
+
+                <a href="#" class="link">
+                    <i class="icon-network"><br />
+                        SIEC
+                    </i>
+                
+                </a>
+
+                <a href="#" class="link">
+                    <i class="icon-progress-3"><br />
+                        STAN BATERII
+                    </i>
+                
+                </a>
+
+
+
+    </div>
+</div>
+<div class="footer">
+    Copyright by Daniel 2021
+</div>
+</body>
+</html>
