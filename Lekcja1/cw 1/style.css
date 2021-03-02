@@ -1,0 +1,47 @@
+body{
+    background-color: rgba(9, 187, 3, 0.568);
+    margin:0;
+
+}
+div{
+    border: 2px dashed red;
+}
+
+
+
+.flex{
+    display:flex;
+    border:2px solid blue;
+}
+.flex div{
+    background-color: burlywood;
+}
+
+.left{
+    flex:2;
+}
+
+.right{
+    flex:1;
+
+}
+
+.flex .left img{
+    max-width: 100%;
+
+}
+
+.header{
+    display:flex;
+    justify-content: center;
+}
+
+.footer{
+    padding: 15px 15px;
+}
+
+.div1{
+    background-color: rgb(104, 90, 185);
+    margin:10px;
+    padding: 5px 50px;
+}

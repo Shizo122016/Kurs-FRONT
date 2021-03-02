@@ -1,0 +1,62 @@
+.header{
+    background-color: rgb(66, 62, 62);
+    border: 2px solid black;
+    display:flex;
+    justify-content: center;
+    padding: 15px 15px;
+}
+.subtitle{
+    background-color: rgb(88, 80, 80);
+    border: 2px solid black;
+    display:flex;
+    justify-content: center;
+    border-top: 0px;
+}
+.gif{
+    margin:30px 5px 15px 5px;
+    border: 2px solid black;
+}
+.gif img {
+    width:75px;
+    height:75px;
+}
+
+.content{
+    display:flex;
+    justify-content: center;
+    background-color: rgb(88, 80, 80);
+    border:2px solid black;
+    border-top: 0px;
+}
+
+.footer{
+    background-color: rgb(88, 80, 80);
+    border:2px solid black;
+    border-top:0;
+    padding:30px;
+    text-align:right;
+}
+
+.opis_gif{
+    border:1px solid black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width:40%;
+    height:50vh;
+    flex:3;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.opis_gif img{
+    max-width:100%
+}
+
+.desc{
+    border:1px solid black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-left:0;
+    width:20%;
+    flex:1;
+}
