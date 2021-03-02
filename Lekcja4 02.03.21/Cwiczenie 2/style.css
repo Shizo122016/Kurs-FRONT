@@ -1,0 +1,11 @@
+body{
+    /* Background pattern from Toptal Subtle Patterns */
+    background-image:url("img/background.png");
+    color:white;
+    font-size:2em;
+    
+}
+/*Znak mniejszosci daje to ze odnosi sie tylko do dziecka ktore jest ponizej a nie do wszystkich li*/
+/* ol > li{ 
+    list-style-type:none;
+} */
