@@ -1,0 +1,22 @@
+body {
+  background-color: pink;
+  border: 5px dashed white;
+  font-size: 70px;
+  color: red;
+}
+
+body p {
+  border: 10px dashed blue;
+  font-size: 60px;
+  color: red;
+  color: greenyellow;
+}
+
+body p a {
+  color: goldenrod;
+}
+
+body a {
+  color: green;
+}
+/*# sourceMappingURL=style.css.map */

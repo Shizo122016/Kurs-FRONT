@@ -1,0 +1,33 @@
+//Wtyczka Live Sass compiler
+//Trzeba nacisnac na dole watching zeby kompilowalo w czasie rzeczywistym
+
+
+//Zmienne (mozna je uzywac w preprocesorach)
+$bgColor: pink;
+$fontColor: green;
+
+//Funkcje (podobnie jak w javascript)
+@mixin style($rozmiar , $rozmiarfs ,$color) {
+    border:$rozmiar dashed $color;
+    font-size: $rozmiarfs;
+    color:red;
+}
+
+
+body{
+    background-color: $bgColor;
+    @include style(5px, 70px, white); //W nawiasie sa argumenty podane do zmiennych
+    
+    p{
+        @include style(10px, 60px, blue); //W nawiasie sa argumenty podane do zmiennych
+        color:greenyellow;
+
+        a{
+            color:goldenrod;
+        }
+    }
+    
+    a{
+        color:$fontColor;
+    }
+}
