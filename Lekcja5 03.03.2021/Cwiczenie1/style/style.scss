@@ -5,19 +5,24 @@
 //Zmienne (mozna je uzywac w preprocesorach)
 $bgColor: pink;
 $fontColor: green;
-
+$borderSize: 2px;
 //Funkcje (podobnie jak w javascript)
 @mixin style($rozmiar , $rozmiarfs ,$color) {
     border:$rozmiar dashed $color;
     font-size: $rozmiarfs;
     color:red;
 }
-
+//Extend , przedluzanie i dziedziczenie
+%paka{
+    border: $borderSize dashed yellow;
+    background-color: rgb(68, 68, 20);
+}
 
 body{
     background-color: $bgColor;
-    @include style(5px, 70px, white); //W nawiasie sa argumenty podane do zmiennych
-    
+    // @include style(5px, 70px, white); //W nawiasie sa argumenty podane do zmiennych
+    @extend %paka;
+
     p{
         @include style(10px, 60px, blue); //W nawiasie sa argumenty podane do zmiennych
         color:greenyellow;
@@ -29,5 +34,25 @@ body{
     
     a{
         color:$fontColor;
+    }
+}
+
+.flex{
+    display:flex;
+    border:2px dashed red;
+    color:white;
+    div{
+        border:2px dashed black;
+        padding:5%;
+    }
+}
+
+
+//Petla For (through albo to)
+@for $i from 1 through 4{
+    .flex-item#{$i} {
+        font-size:30px * $i;
+        background-color: lighten(black, 25%*$i);
+        color: darken(white, 25%*$i);
     }
 }

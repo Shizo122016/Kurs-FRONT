@@ -1,8 +1,10 @@
 body {
+  border: 2px dashed yellow;
+  background-color: #444414;
+}
+
+body {
   background-color: pink;
-  border: 5px dashed white;
-  font-size: 70px;
-  color: red;
 }
 
 body p {
@@ -18,5 +20,42 @@ body p a {
 
 body a {
   color: green;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 2px dashed red;
+  color: white;
+}
+
+.flex div {
+  border: 2px dashed black;
+  padding: 5%;
+}
+
+.flex-item1 {
+  font-size: 30px;
+  background-color: #404040;
+  color: #bfbfbf;
+}
+
+.flex-item2 {
+  font-size: 60px;
+  background-color: gray;
+  color: gray;
+}
+
+.flex-item3 {
+  font-size: 90px;
+  background-color: #bfbfbf;
+  color: #404040;
+}
+
+.flex-item4 {
+  font-size: 120px;
+  background-color: white;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */
