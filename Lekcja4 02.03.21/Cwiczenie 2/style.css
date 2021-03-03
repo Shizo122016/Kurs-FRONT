@@ -107,7 +107,7 @@ ol > li > ol > li {
 .container2{
     border:2px solid white;
     margin-left:10%;
-    margin-right:11%;
+    margin-right:10%;
     margin-top:1%
 }
 
@@ -130,7 +130,8 @@ ol > li > ol > li {
 .comment2{
     padding-left:3%;
     margin-bottom:2%;
-    padding-right:1%
+    padding-right:1%;
+
 }
 
 .comment2 h4{
@@ -163,4 +164,8 @@ footer img{
 }
 .social{
     margin:20px;
+}
+
+textarea {
+  resize: none;
 }
