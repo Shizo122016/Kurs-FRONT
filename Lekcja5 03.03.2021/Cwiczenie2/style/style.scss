@@ -1,0 +1,124 @@
+
+@mixin borderki(){
+    border:2px solid black;
+    margin:2px;
+}
+
+%centered{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    border:2px solid black;
+    
+    .naglowek{
+        @include borderki();
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .container1{
+        
+        display:flex;
+        @include borderki();
+
+        .opis{
+            @include borderki();
+            @extend %centered;
+          
+        }
+
+        .zdj{
+
+            @include borderki();
+
+            img{
+                height:60vh;
+            }
+        }
+
+    }
+
+    .container2{
+        @include borderki();
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        div{
+
+            height:40vh;
+            border:30px solid black;
+            background-size:cover;
+            background-position: center;
+            @for $i from 1 through 6{
+                &:nth-child(#{$i}){
+                    background-image: url(../img/d#{$i}.png);
+                    border-color:lighten(black, 15%*$i)
+                }
+            }
+        }
+        
+
+    }
+
+    .container3{
+        @include borderki();
+
+        section{
+            @include borderki();
+            
+            display:flex;
+            div{
+                @include borderki();
+            }
+            .opis2{
+                
+                p{
+                    @extend %centered;
+
+                }
+            }
+        }
+    }
+    .stopka{
+        @include borderki();
+        display:flex;
+        justify-content: center;
+        
+        a{
+            margin:2px;
+            color:black;
+            font-size:3em;
+            text-decoration: none;
+        }
+    }
+
+}
+
+
+
+// @for $i from 1 through 6 {
+//     .d#{$i}{
+//         background-color: lighten (black, 16%*$i);
+//         border:1px solid black;
+//         display:flex;
+//         justify-content: center;
+//         align-items: center;
+//         padding:10px;
+        
+        
+//     }
+// }
+
+@for $i from 1 through 6 {
+    .img#{$i}{
+        width:33%;
+        
+        margin:4%
+    }
+}

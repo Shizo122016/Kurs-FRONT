@@ -1,0 +1,166 @@
+body .container1 .opis, body .container3 section .opis2 p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body {
+  border: 2px solid black;
+}
+
+body .naglowek {
+  border: 2px solid black;
+  margin: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 2px solid black;
+  margin: 2px;
+}
+
+body .container1 .opis {
+  border: 2px solid black;
+  margin: 2px;
+}
+
+body .container1 .zdj {
+  border: 2px solid black;
+  margin: 2px;
+}
+
+body .container1 .zdj img {
+  height: 60vh;
+}
+
+body .container2 {
+  border: 2px solid black;
+  margin: 2px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+body .container2 div {
+  height: 40vh;
+  border: 30px solid black;
+  background-size: cover;
+  background-position: center;
+}
+
+body .container2 div:nth-child(1) {
+  background-image: url(../img/d1.png);
+  border-color: #262626;
+}
+
+body .container2 div:nth-child(2) {
+  background-image: url(../img/d2.png);
+  border-color: #4d4d4d;
+}
+
+body .container2 div:nth-child(3) {
+  background-image: url(../img/d3.png);
+  border-color: #737373;
+}
+
+body .container2 div:nth-child(4) {
+  background-image: url(../img/d4.png);
+  border-color: #999999;
+}
+
+body .container2 div:nth-child(5) {
+  background-image: url(../img/d5.png);
+  border-color: #bfbfbf;
+}
+
+body .container2 div:nth-child(6) {
+  background-image: url(../img/d6.png);
+  border-color: #e6e6e6;
+}
+
+body .container3 {
+  border: 2px solid black;
+  margin: 2px;
+}
+
+body .container3 section {
+  border: 2px solid black;
+  margin: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .container3 section div {
+  border: 2px solid black;
+  margin: 2px;
+}
+
+body .stopka {
+  border: 2px solid black;
+  margin: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .stopka a {
+  margin: 2px;
+  color: black;
+  font-size: 3em;
+  text-decoration: none;
+}
+
+.img1 {
+  width: 33%;
+  margin: 4%;
+}
+
+.img2 {
+  width: 33%;
+  margin: 4%;
+}
+
+.img3 {
+  width: 33%;
+  margin: 4%;
+}
+
+.img4 {
+  width: 33%;
+  margin: 4%;
+}
+
+.img5 {
+  width: 33%;
+  margin: 4%;
+}
+
+.img6 {
+  width: 33%;
+  margin: 4%;
+}
+/*# sourceMappingURL=style.css.map */
