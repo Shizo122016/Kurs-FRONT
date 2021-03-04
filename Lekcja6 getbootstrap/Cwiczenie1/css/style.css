@@ -1,0 +1,25 @@
+.KolorHeader {
+  background-color: black;
+}
+
+.RozmiarZdjOpisu {
+  width: 200px;
+  height: 200px;
+  float: right;
+}
+
+.RozmiarZdjTosterow {
+  width: 15vh;
+  height: 15vh;
+}
+
+.RozmiarKaruzeli {
+  max-height: 350px;
+}
+
+.BodyCentrowanie {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=style.css.map */
