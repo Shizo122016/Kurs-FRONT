@@ -8,13 +8,11 @@
 </head>
 <body>
 
-    <div class="BierzMnieJS">
-
-    </div>
+    <div class="BierzMnieJS"></div>
 
 
-    <script>
-        //KOMUNIKACJA Z JS
+    <!-- <script>
+        //--------------------------------------KOMUNIKACJA Z JS
 
         //Pokazuje w konsoli - Jakis tekst
         // console.log("Jakiś tekst");
@@ -28,18 +26,346 @@
         // alert("Siemanko"); // Zatrzymuje kod do pozbycia sie alertu i wyswietla napis w srodku
         // console.log(BierzMnieJS2);
 
-        //ZMIENNE I OPERATORY
+        //---------------------------------------ZMIENNE I OPERATORY
 
-        let x= 5;
-        x++;
-        console.log(x);
-        x += 5;
-        console.log(x);
+        // let x= 5;
+        // x++;
+        // console.log(x);
+        // x += 5;
+        // console.log(x);
         
 
+        // //------------------------------------------FUNKCJE
+        // function myFunc(a,b)
+        // {
+        //     return a*b;
+        // }
+
+        // let zwrot = myFunc(2,3);
+        // console.log(zwrot);
+
+        // //drugi sposob (strzalkowy)
+
+        // let myFunc2 = (a,b) =>
+        // {
+        //     return a*b;
+        // }
+
+        // let zwrot2 = myFunc2(3,6);
+        // console.log(zwrot2);
+
+        //----------------------------------------OBIEKTY
+
+        // let x = { 
+        //     "name":"John",
 
 
+        // };
+
+        // console.log(x.name);
+
+        // let y = { 
+        //     "name":"John",
+        //     "saySomething": () => {console.log("something");},
+        //     "nextObj": {
+        //         "param1":"param value"
+        //     }
+        // };
+
+        // y.saySomething();
+
+        // console.log(y.name + " Schwarzenneger powiedział " + y.nextObj.param1);
         
-    </script>
+
+        // --------------------------------------------TABLICE
+
+        // let heroes = ["Stonoga","Pawel Jumper","Siostry Godlewskie"];
+        // console.log(heroes[0]); //Stonoga
+        // heroes[0] = "Madzia";
+        // console.log(heroes[0]);// Madzia
+        // heroes.pop(); // Wyrzucenie ostatniej wartosci z tablicy
+        // console.log(heroes); // Madzia, Pawel Jumper
+        // heroes.push("Olisadebe"); //Dodanie do tablicy 
+        // console.log(heroes); //"Madzia", "Pawel Jumper" , "Olisadebe"
+        // console.log(heroes.sort()); //"Madzia", "Olisadebe", "Pawel Jumper" - Sortuje 
+        // console.log(heroes.splice(1,2)); //"Olisadebe", "Pawel Jumper"
+
+        // //
+        // let y = [
+        //     {
+        //         "name":"John",
+        //         "surname":"Doe"
+        //     },
+        //     {
+        //         "name":"Andrew",
+        //         "surname":"Eod"
+        //     },
+        //     {
+        //         "name":"Joahim",
+        //         "surname":"Huehue"
+        //     }
+        // ]
+
+        // y[0].name;
+        // console.log(y[0].name + " " + y[0].surname);
+    </script> -->
+
+
+
+ <!------------------------------------------------------- ONLICK -->
+    <!-- <div onclick="obj.say()">Klikaj</div>
+    <div class="clicker">Klikaj</div> -->
+
+    <!-- <script>
+
+        let obj = {
+            "say": () => {
+                console.log("Emano");
+            }
+        };
+
+        let clicker = document.querySelector(".clicker");
+        clicker.onclick = () => obj.say(); // Wrzucenie do srodka funkcji zeby wywolywalo dopiero po kliknieciu
+        clicker.onclick = () => {}; // Sciagniecie z onclicka
+    </script> -->
+
+
+<script>
+    //-----------------------------------KLASY
+    // class Pet{
+    //     constructor(x,y,z){
+    //         this.x=x;
+    //         this.y=y;
+    //         this.z=z;
+    //         this.name = " John ";
+    //     }
+    //     getFullYear(){
+    //         return "Ja ci dam Year!";
+    //     }
+    // }
+
+    // let dog = new Pet(1,2,3);
+
+    // let dt = new Date();
+
+    //---------------------------------------------IF
+    // let c=0;
+    // if(c== 0){
+    //     console.log("Jest Zero");
+    // }
+    // else if(c == 1)
+    // {
+    //     console.log("Jest Jeden");
+    // }
+    // else
+    // {
+    //     console.log("Nie jest zero ani jeden");
+    // }
+
+    // console.log(" ");
+    //---------------------------------------------IF MULTIPLE
+    // let x1 = 5;
+    // let x2 = 2;
+
+    // if(x1 == 5 && x2 == 3)
+    // {
+    //     console.log("Obydwie liczby sie zgadzaja");
+    // }
+    // else if(x1 == 5 || x2 == 3)
+    // {
+    //     console.log("Jedna liczba sie zgadza");
+    // }
+
+
+    //-------------------------------------PETLA FOR
+
+    //CWICZENIE MARTY
+    // let xaa = [4,0,0,0];
+    // let xb = [4,4,4,0];
+    // let result = 0;
+
+    // for (i=0; i < xaa.length; i++)
+    // {
+    //     let isElement=false;
+    //     for(i1=0; i1 < xb.length; i1++)
+    //     {
+    //         if(xaa[i] == xb[i1]){
+    //             // result++;
+    //             isElement= true;
+    //         }
+    //     }
+    //     if(isElement)
+    //     {
+    //         result++;
+    //     }
+    // }
+    // console.log("Zgadza sie " + result + " liczb")
+
+    // for (j = 0; j < 5; j++)
+    // {
+    //     if(j==2){
+    //         //continue; // Pomija Iteracje (czyli pomija dwojke) i zaczyna iterowac 3
+    //         break; // Konczy petle przy spelnieniu warunku
+    //     }
+    //     console.log(j);
+    // }
+
+    // let arr = [1,2,3,4];
+    // arr.splice(0,2); // Usuwa od indeksu zero , dwie nastepne elementy tablicy 
+    // console.log(arr);
+
+
+    //----------------------------------SWITCH
+
+    // let z = 3;
+
+    // switch (z) {
+    //     case 1:
+    //         console.log("jestem 1");
+    //         break;
+    //     case 2:
+    //         console.log("jestem 2");
+    //         break;
+    //     default:
+    //         // console.log("default");
+    //         break;
+    // }
+
+    // //-----------------------FOR NA TABLICY OBIEKTOW
+
+    // let yy = 
+    // [
+    //     {
+    //         "name":"John",
+    //         "surname":"Doe"
+    //     },
+    //     {
+    //         "name":"Andrew",
+    //         "surname":"Eod"
+    //     },
+    //     {
+    //         "name":"Joahim",
+    //         "surname":"Huehue"
+    //     }
+    // ]
+
+    // for (ludz of yy) {
+    //     console.log(ludz.name + " " + ludz.surname);
+    // }
+
+    //-------------------------------PETLA WHILE 
+    // let i = 0;
+    // while(i<10) {
+    //     console.log(i);
+    //     i++;
+    // }
+
+    // let w = 0;
+    // do{
+    //     //Tylko liczby parzyste
+    //     if(w % 2 == 0) // reszta z dzielenia rowna sie 0
+    //     {
+    //         console.log(w);
+    //     }
+    //     w++;
+
+    // }
+    // while(w < 10);
+
+    
+
+</script>
+<div class="flex">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+    <div class="flex-item">4</div>
+</div>
+
+<script>
+//--------------------------------DOM Document Object Model
+
+// let flexItems = document.getElementsByClassName(".flex-item");
+// let flexItemsQ = document.querySelectorAll(".flex-item");
+// console.log(flexItems);
+
+
+// flexItems[0].addEventListener("mouseover",()=>{
+//     console.log("wykonuje sie!");
+// })
+
+
+let div = document.createElement("div"); //Tworzy div
+div.innerHTML = "TEN DIV";
+div.className = "TenDIV";
+div.style.backgroundColor = "red";
+
+document.body.appendChild(div); // DO BODY W DOKUMENCIE DOPINA JAKO DZIECKO DIV
+
+
+// ----------------------------------------OPERACJE CZASOWE
+
+//setTimeout(CoMaSieDziac,ZaIle); //Budowa
+
+// console.log("CZEKAJ, pa na to");
+// setTimeout(()=>{
+//     // console.log("TERAZ MNIE WIDAC!!!!");
+// },2000);
+
+// let interval = setInterval(()=>{
+//     console.log("siema");
+// },1000);                        // CO JEDNA SEKUNDE SIE WYSWIETLA SIEMA
+
+// clearInterval(interval); // WYLACZENIE INTERVALU
+
+
+
+// Mozna uruchomic w konsoli interval.start (uruchamia licznik) , interval.stop (zatrzymuje)
+// let interval ={
+//     int : () => {},
+//     start(){
+//         this.setInterval(() => {
+//             console.log("siema")
+//         }, 1000);
+//     },
+//     stop(){
+//         clear.Interval(this.int);
+//     }
+// }
+
+
+// let ips=0;
+// let inter = setInterval(() => {
+    
+// }, 1000);
+    //----------------------------SCOPES
+    var v1 = 1; //OPIErA SIE GLOBALNIE (MOZNA NADPISAC)
+
+    let l1 = 1; // NIE MOZNA NADPISAC , DEFINIUJE GO BLOKOWO
+
+
+    if(true){
+        var v2 = 1;
+        let l2 = 1;
+
+        // console.log("dwa");
+    }
+    // console.log(v2); // zwroc 1
+    // console.log(l2);  // wywali error
+
+    // const c1 = 2; // CONST JEST STALA WARTOSCIA
+
+    // c1 = 3; // WYWALI BLAD ZE NIE MOZNA ZMIENIC CONSTA
+    // console.log(c1);
+
+    //Tak mozna wyciagnac zmienna blokowa na zewnatrz
+    function xaxx(){
+        let letx = 0;
+        return letx;
+    }
+    console.log (xaxx());
+</script>
+
+
 </body>
 </html>

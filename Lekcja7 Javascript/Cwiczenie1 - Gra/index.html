@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+        margin:0;
+        box-sizing: border-box;
+      }
+      body{
+        margin:0;
+        box-sizing:border-box;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:100vw;
+        height: 100vh;
+        
+      }
+      main{
+        position:relative;
+      }
+      main *{
+        position:absolute;
+      }
+
+    </style>
+</head>
+<body>
+
+
+<script>
+  let game = 
+  {
+    plane : document.createElement("main"),
+
+    setPlane() // Ustawia mape do gry w wielkosci kwadratu zalezna od wysokosci/szerokosci ( zawsze bedzie rowny)
+    {
+      document.body.append(this.plane);
+      this.plane.style.border = "2px dashed red";
+
+      
+      let dim = 0;
+
+
+      if(window.screen.width > window.screen.height)
+      {
+        dim = window.screen.height ;
+      }
+      else
+      {
+        dim = window.screen.width ;
+      }
+      dim = 0.8 * dim;
+      this.plane.style.width = dim + "px";
+      this.plane.style.height = dim + "px";
+    },
+
+    walls : {
+      wallsTemplates: [
+        [
+          [0,0,20,5],
+          [0,20,20,5]
+        ]
+
+      ],
+      singlewall(x,y,w,h,type = "wall"){ // x - na osi x , y - na osi y , w - width , h- height
+        console.log("Poprawnie stworzono sciane!");
+        let wall = document.createElement("div"); // Tworzy Diva
+        game.plane.append(wall); // Do plane dopinamy wall
+        wall.style.marginLeft = x + "%"; // koordynaty x w %
+        wall.style.marginTop = y + "%"; // koordynaty y w % 
+        wall.style.width = w + "%"; // szerokosc w %
+        wall.style.height = h + "%"; // wysokosc w %
+        wall.style.backgroundColor = "red";
+      }
+    }
+  
+  
+  };
+
+  //Kiedy sie rozdzielczosc zmienia  - set size of game.plane
+  window.onresize = () =>{
+    game.setPlane();
+  }
+
+  game.setPlane();
+
+  game.walls.singlewall(0,0,40,5);
+  game.walls.singlewall(0,10,40,5);
+</script>
+</body>
+</html>
