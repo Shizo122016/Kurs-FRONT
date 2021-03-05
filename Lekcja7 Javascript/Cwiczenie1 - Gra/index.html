@@ -35,26 +35,31 @@
 <script>
   let game = 
   {
+    lives: 5,
+    declives(){ //decrease lives
+
+    },
+
     plane : document.createElement("main"),
 
     setPlane() // Ustawia mape do gry w wielkosci kwadratu zalezna od wysokosci/szerokosci ( zawsze bedzie rowny)
     {
       document.body.append(this.plane);
-      this.plane.style.border = "2px dashed red";
+      this.plane.style.border = "5px Solid red";
 
       
       let dim = 0;
 
 
-      if(window.screen.width > window.screen.height)
+      if(window.innerWidth > window.innerHeight)
       {
-        dim = window.screen.height ;
+        dim = window.innerHeight ;
       }
       else
       {
-        dim = window.screen.width ;
+        dim = window.innerWidth ;
       }
-      dim = 0.8 * dim;
+      // dim = 0.8 * dim;
       this.plane.style.width = dim + "px";
       this.plane.style.height = dim + "px";
     },
@@ -62,24 +67,139 @@
     walls : {
       wallsTemplates: [
         [
-          [0,0,20,5],
-          [0,20,20,5]
+          [0,0,25,5],
+          [0,10,20,5],
+          [25,0,5,20],
+          [15,10,5,20],
+          [15,25,25,5],
+          [35,5,5,20],
+          [35,5,40,5],
+          [70,5,5,40],
+          [95,0,5,40],
+          [75,5,5,5],
+          [80,15,5,5],
+          [80,25,5,5],
+          [85,35,10,5],
+          [85,35,5,20],
+          [40,55,50,5],
+          [55,15,5,70],
+          [45,20,10,5],
+          [35,30,15,5],
+          [35,40,15,5],
+          [35,40,5,20],
+          [25,35,5,60],
+          [0,15,5,85],
+          [10,35,5,50],
+          [10,35,10,5],
+          [10,55,10,5],
+          [10,75,10,5],
+          [20,65,10,5],
+          [20,45,10,5],
+          [20,85,10,5],
+          [10,90,15,5],
+          [30,40,5,5],
+          [35,65,5,35],
+          [45,55,5,35],
+          [50,55,5,35],
+          [35,95,30,5],
+          [60,90,35,5],
+          [60,95,35,5],
+          [65,65,5,25],
+          [75,60,5,25],
+          [85,65,5,25],
+          [90,65,5,25],
+          [90,55,10,5],
+          [95,95,5,5,"meta"],
+          [0,5,5,5,"start"],
+          [0,0,0.3,100],
+          [0,0,100,0.3],
+          [85,0,15,20,"lifes"],
+          [85,20,15,20,"time"]
         ]
 
       ],
+      build( stage = 0){
+        // console.log(this); // Sprawdzenie do czego mozesz sie odwolac
+        // console.log(this.wallsTemplates[stage]); //Zwraca template 1 tablicy (planszy)
+        for(w of this.wallsTemplates[stage]){
+          // console.log(typeof w[4]); // Sprawdza (mete)
+          if(typeof w[4] != "undefined"){
+            this.singlewall(w[0],w[1],w[2],w[3],w[4]);
+          }
+          else
+          {
+            this.singlewall(w[0],w[1],w[2],w[3]);
+          }
+          
+        }
+      },
+
       singlewall(x,y,w,h,type = "wall"){ // x - na osi x , y - na osi y , w - width , h- height
-        console.log("Poprawnie stworzono sciane!");
+        // console.log("Poprawnie stworzono sciane!");
         let wall = document.createElement("div"); // Tworzy Diva
         game.plane.append(wall); // Do plane dopinamy wall
         wall.style.marginLeft = x + "%"; // koordynaty x w %
         wall.style.marginTop = y + "%"; // koordynaty y w % 
         wall.style.width = w + "%"; // szerokosc w %
         wall.style.height = h + "%"; // wysokosc w %
-        wall.style.backgroundColor = "red";
+        wall.className = type;
+        if(type == "meta")
+        {
+          wall.style.backgroundColor = "blue";
+          
+        }
+        else if (type == "start")
+        {
+          wall.onclick = ()=> {game.start();};
+          wall.style.backgroundColor = "green";
+        }
+        else if (type== "lifes" || type == "time")
+        {
+          wall.style.border = "2px solid black";
+          wall.style.backgroundColor = "white";
+        }
+        else
+        {
+          wall.style.backgroundColor = "red";
+          
+        }
+      }
+    },
+  
+    start(){
+      console.log("start");
+      document.querySelector(".start").onclick = () => {};
+      document.querySelector(".meta").onmouseover = () => {game.over(true);};
+
+      // wall.onmouseover = () => {game.over(true);};
+      let walls = document.querySelectorAll(".wall");
+      for(w of walls){
+        w.onmouseover = () => {console.log("Walnąłeś!!!!!!");}
+      }
+      
+    },
+    over(isWin){
+
+      document.querySelector(".start").onclick = () => {game.start()};
+      document.querySelector(".meta").onmouseover = () => {};
+
+      // wall.onmouseover = () => {game.over(true);};
+      let walls = document.querySelectorAll(".wall");
+      for(w of walls){
+        w.onmouseover = () => {}
+      }
+
+
+      if(isWin){
+        console.log("Wygrales");
+      }
+      else{
+        console.log("Przegrales");
+        
       }
     }
-  
-  
+
+
   };
 
   //Kiedy sie rozdzielczosc zmienia  - set size of game.plane
@@ -89,8 +209,12 @@
 
   game.setPlane();
 
-  game.walls.singlewall(0,0,40,5);
-  game.walls.singlewall(0,10,40,5);
+  //wywoluje funkcje (buduje sciane po podaniu arg)
+  // game.walls.singlewall(0,0,40,5);
+  // game.walls.singlewall(0,10,40,5);
+
+  game.walls.build(0);
+  
 </script>
 </body>
 </html>
