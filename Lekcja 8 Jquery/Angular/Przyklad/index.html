@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.js"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        input{
+        
+        }
+        .container{
+            border:1px dashed #000;
+            display:flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .card{
+            border:2px solid #000;
+            width:30%;
+            margin:1%;
+        }
+        .title{
+            color:#fff;
+            background-color:#000;
+            text-align: center;
+            padding:2%;
+        }
+        .holder{
+            display:flex;
+        }
+        .blank{
+            border:1px dashed #000;
+            width:50%;
+            min-height: 15vh;
+        }
+        .desc{
+            padding:2%;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body data-ng-app="myApp" data-ng-controller="myCtrl">
+    <header>
+        <h1>Ćw 3</h1>
+    </header>
+    <input type="text" data-ng-model="szukajka">
+    <div class="container">
+        <div class="card" data-ng-repeat="p in pracownicy | filter:szukajka">
+            <div class="title">{{p.Imie + " " + p.Nazwisko}}</div>
+            <div class="holder">
+                <div class="blank">
+                </div>
+                <div class="desc">
+                    {{p.Stanowisko}}
+                    <br />
+                    {{p["Staz Pracy"]}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        let app = angular.module("myApp",[]);
+        let controller = app.controller("myCtrl",($scope, $http, $filter)=>{
+            $http.get("pracownicy.json")
+            .then((response)=>{
+                $scope.pracownicy = response.data;
+            })
+        })
+    </script>
+</body>
+</html>

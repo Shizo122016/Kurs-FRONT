@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="angular.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body data-ng-app="MojaAppka"  data-ng-controller="PracaDane">
+        <div> 
+                <div class="p_lista">
+                    <p><h3>Lista pracowników</h3></p><br />
+
+                </div>
+                <div class="Szukaaj">
+                    <input type="text" data-ng-model="Szukaj" placeholder="Wyszukaj pracownika" />
+                </div>
+                <div class="container">
+                    <div class="card" data-ng-repeat="x in pracownicy | filter:Szukaj">
+                        <div class="osoba">
+                            {{x.Imie+" "+ x.Nazwisko}}
+                        </div>
+                        <div class="holder">
+                        
+                        
+                            <div class="blank">
+                                <img src="Avatar.jpg" alt="" >
+                            </div>
+                            <div class="desc">
+                                {{x.Stanowisko}}
+                                <br />
+                                {{x["Staz Pracy"]}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- <table>
+                <tr ng-repeat="x in pracownicy | filter:Szukaj">
+                    <td>{{x.Imie}}</td>
+                    <td>{{x.Nazwisko}}</td>
+                    <td>{{x.Stanowisko}}</td>
+                    <td>{{x["Staz Pracy"]}}</td>
+                </tr>
+            </table> -->
+        </div>
+
+
+
+    <script>
+        let app = angular.module("MojaAppka", []);
+        let controller = app.controller('PracaDane', function($scope, $http, $filter){
+            $http.get("pracownicy.json")
+            .then(function(response){
+                $scope.pracownicy = response.data
+            });
+        });
+
+        // let app = angular.module("myApp",[]);
+        // let controller = app.controller("myCtrl",($scope, $http, $filter)=>{
+        //     $http.get("pracownicy.json")
+        //     .then((response)=>{
+        //         $scope.pracownicy = response.data;
+        //     })
+        // })
+    </script>
+</body>
+</html>

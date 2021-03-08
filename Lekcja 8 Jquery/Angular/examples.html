@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="angular.js"></script>
+		<style>
+			:root{font-size:50px;}
+			h3{margin-top:80%;font-size:1rem;}
+			h3:first-child{margin-top:0;}
+			body{font-size:0.6rem;}
+			table{
+				border:1px dotted #000;
+				width:100%;
+			}
+			table td{border:1px dotted #000}
+		</style>
+	</head>
+
+
+<!-------------------------------------------->
+<h3>PRZYKŁAD 1</h3>
+<!-------------------------------------------->
+<!--
+		data- ,żeby kod
+		przechodził przez 
+		↙walidatory kodu  	    ↙ deklaruje zmienne				-->
+<body data-ng-app="myApp" data-ng-init="n='LEGIA TO'">
+<!--		↖ 		↖definicja aplikacji do JS
+dyrektywa definiujaca 
+aplikację		-->
+
+
+<!--  MODEL (dane od użytkownika)↘      -->
+	<input type="text" data-ng-model="jakisText" /> 
+	<br />
+	<!-- Klej między MODELEM(Dane) a WIDOKIEM
+		(Tym, co wyświetla przeglądarka - DOM)
+				↙					-->
+	<span data-ng-bind="n"></span>
+	{{jakisText|uppercase}}
+<!-- ↖ To uproszczony -ng-bind 
+		|uppercase to filtr powiększania znaków-->
+
+		
+
+<!-------------------------------------------->
+<h3>PRZYKŁAD 2</h3>
+<!-------------------------------------------->
+<!-- 
+	Żeby podpiąć JS, trzeba zdefiniować aplikację
+	w Przykładzie 1 - trzeba ją jakoś nazwać.
+	  KONTROLER↘				-->
+<div data-ng-controller="myCtrl">
+	{{cecha+" "+ postac}}
+
+</div>
+<script>   // Definicja appki↘ (w ng-app)
+	var app = angular.module("myApp", []);
+//		  ↖							 ↗
+//	definicja appki			miejsce na 
+//	w JS					inne moduły
+// nazwa kontrolera↘
+	app.controller("myCtrl", function($scope) {
+//		klej łączący KONTROLER z WIDOKIEM↗
+		$scope.postac = "jeż";
+		$scope.cecha = "Mięsny";
+	});
+</script>
+
+<!-------------------------------------------->
+<h3>PRZYKŁAD 3</h3>
+<!-------------------------------------------->
+<div data-ng-controller="konGor">
+	<ul>Wielkie Góry<!--    ↖ nowy kontroller
+					zapętla li, tyle razy ile jest
+					↙ elementów w tablicy
+-->		<li data-ng-repeat="duza 
+		in ['K2','Czobolungma','Mount Blanc']">
+			{{duza}}
+		</li>
+	</ul>
+	<ul>Małe góry
+		<li data-ng-repeat="mala in male">
+			{{mala.nazwa+", wys:"+mala.wysokosc}}
+		</li>
+	</ul>
+</div>
+<script>
+	app.controller("konGor", function($scope) {
+		$scope.male = 
+		[
+			{
+				"nazwa":"Tarnowskie Góry",
+				"wysokosc":"20 m"
+			},
+			{
+				"nazwa":"Górki Małe",
+				"wysokosc":"10m"
+			}
+		];
+	});
+</script>
+<!-------------------------------------------->
+<h3>PRZYKŁAD 4</h3>
+<!-------------------------------------------->
+<div data-ng-controller="konDane">
+<!-- 	KONTROLER (Do JS) ↗					-->
+	<p>Wygrani eurowizji Junior</p>
+	<input type="text" data-ng-model="szukajka" placeholder="Szukaj" />
+<!-- MODEL (dane od użytkownika) ↗					-->
+	<table>
+<!-- 			filtrowanie po modelu ↘					-->
+		<tr ng-repeat="y in wygrani | filter:szukajka">
+		<!--	WIDOK	-->	
+			<td>{{y.Year}}</td>
+			<td>{{y.Winner}}</td>
+			<td>{{y.Points}}</td>
+			<td>{{y.Song}}</td>
+    </tr>
+    <tr ng-repeat="x in biegacze | filter:szukajka">
+      <!--	WIDOK	-->	
+        <td>{{x.Konkurencja}}</td>
+        <td>{{x["Host city"]}}</td>
+        <td>{{x.Data}}</td>
+        <td>{{x.Zawody}}</td>
+      </tr>
+  </table>
+</div>
+<script>
+//									do filtrowania↘
+//								do pobrania↘		↘
+app.controller('konDane', function($scope, $http, $filter){
+	//  ↙ pobieranie danych GET przez http
+	$http.get("wygrani_eurowizja.json")
+	//				↖ ścieżka do pliku
+	.then(function(response) {
+	//					↖ wartość tego będzie w data:{}
+		$scope.wygrani = response.data; // rozbieramy data:{}
+	//				↖ definiujemy wartość do WIDOKU	
+  });
+  
+  $http.get("biegacze.json").then(function(response) {
+      console.log(response); // wyrzuca co mozna pobrac z tego pliku , nawet konfiguracyjne
+		$scope.biegacze = response.data;
+	});
+});
+</script>
+
+<h3>Kuniec, teraz ćwiczenia</h3>
+</body>
+</html>

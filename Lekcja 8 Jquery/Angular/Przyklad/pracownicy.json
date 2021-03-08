@@ -1,0 +1,74 @@
+[
+    {
+        "Imie":"Jan",
+        "Nazwisko":"Kowalski",
+        "Stanowisko":"Informatyk",
+        "Staz Pracy":"3 lata"
+    },    
+    {
+        "Imie":"Bartosz",
+        "Nazwisko":"Niedzielski",
+        "Stanowisko":"Monter",
+        "Staz Pracy":"1 mies "
+    },    
+    {
+        "Imie":"Jan",
+        "Nazwisko":"Nowak",
+        "Stanowisko":"Magazynier",
+        "Staz Pracy":"2 lata"
+    },    
+    {
+        "Imie":"Emilia",
+        "Nazwisko":"Kowalska",
+        "Stanowisko":"Informatyk",
+        "Staz Pracy":"3 mies"
+    },    
+    {
+        "Imie":"Genowefa",
+        "Nazwisko":"Trybulska",
+        "Stanowisko":"Magazynier",
+        "Staz Pracy":"1 rok"
+    },    
+    {
+        "Imie":"Patryk",
+        "Nazwisko":"Margines",
+        "Stanowisko":"Magazynier",
+        "Staz Pracy":"1 rok"
+    },    
+    {
+        "Imie":"Daniel",
+        "Nazwisko":"Kowalski",
+        "Stanowisko":"Monter",
+        "Staz Pracy":"6 mies"
+    },    
+    {
+        "Imie":"Danuta",
+        "Nazwisko":"Żoliborz",
+        "Stanowisko":"Architekt",
+        "Staz Pracy":"12 lat"
+    },    
+    {
+        "Imie":"Witold",
+        "Nazwisko":"Nowak",
+        "Stanowisko":"Informatyk",
+        "Staz Pracy":"9 mies"
+    },    
+    {
+        "Imie":"Daniel",
+        "Nazwisko":"Lapicz",
+        "Stanowisko":"Operator",
+        "Staz Pracy":"5 lat"
+    },    
+    {
+        "Imie":"Patryk",
+        "Nazwisko":"Kiełbasa",
+        "Stanowisko":"Monter",
+        "Staz Pracy":"3 mies"
+    },    
+    {
+        "Imie":"Patrycja",
+        "Nazwisko":"Dziwna",
+        "Stanowisko":"Architekt",
+        "Staz Pracy":"7 lat"
+    }
+]

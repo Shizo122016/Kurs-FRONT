@@ -1,0 +1,194 @@
+[
+    {
+      "Konkurencja": "Bieg na 100 metrów",
+      "Rezultat": "9,58",
+      "Zawodnik": "Usain Bolt",
+      "Data": "2009-08-1616 sierpnia 2009",
+      "Zawody": "Mistrzostwa świata",
+      "Miejsce": "Berlin"
+    },
+    {
+      "Konkurencja": "Bieg na 200 metrów",
+      "Rezultat": "19,19",
+      "Zawodnik": "Usain Bolt",
+      "Data": "2009-08-2020 sierpnia 2009",
+      "Zawody": "Mistrzostwa świata",
+      "Miejsce": "Berlin"
+    },
+    {
+      "Konkurencja": "Bieg na 400 metrów",
+      "Rezultat": "43,03",
+      "Zawodnik": "Wayde van Niekerk",
+      "Data": "2016-08-1414 sierpnia 2016",
+      "Zawody": "Igrzyska olimpijskie",
+      "Miejsce": "Rio de Janeiro"
+    },
+    {
+      "Konkurencja": "Bieg na 800 metrów",
+      "Rezultat": "1:40,91",
+      "Zawodnik": "David Rudisha",
+      "Data": "2012-08-099 sierpnia 2012",
+      "Zawody": "Igrzyska olimpijskie",
+      "Miejsce": "Londyn"
+    },
+    {
+      "Konkurencja": "Bieg na 1500 metrów",
+      "Rezultat": "3:26,00",
+      "Zawodnik": "Hicham El Guerrouj",
+      "Data": "1998-07-1414 lipca 1998",
+      "Zawody": "Golden Gala",
+      "Miejsce": "Rzym"
+    },
+    {
+      "Konkurencja": "Bieg na 5000 metrów",
+      "Rezultat": "12:37,35",
+      "Zawodnik": "Kenenisa Bekele",
+      "Data": "2004-05-3131 maja 2004",
+      "Zawody": "Fanny Blankers-Koen Games",
+      "Miejsce": "Hengelo"
+    },
+    {
+      "Konkurencja": "Bieg na 10 000 metrów",
+      "Rezultat": "26:17,53",
+      "Zawodnik": "Kenenisa Bekele",
+      "Data": "2005-08-2626 sierpnia 2005",
+      "Zawody": "Memorial Van Damme",
+      "Miejsce": "Bruksela"
+    },
+    {
+      "Konkurencja": "Maraton",
+      "Rezultat": "2:01:39",
+      "Zawodnik": "Eliud Kipchoge",
+      "Data": "2018-09-1616 września 2018",
+      "Zawody": "Maraton Berliński",
+      "Miejsce": "Berlin"
+    },
+    {
+      "Konkurencja": "Bieg na 110 metrów przez płotki",
+      "Rezultat": "12,80",
+      "Zawodnik": "Aries Merritt",
+      "Data": "2012-09-077 września 2012",
+      "Zawody": "Memorial Van Damme",
+      "Miejsce": "Bruksela"
+    },
+    {
+      "Konkurencja": "Bieg na 400 metrów przez płotki",
+      "Rezultat": "46,78",
+      "Zawodnik": "Kevin Young",
+      "Data": "1992-08-066 sierpnia 1992",
+      "Zawody": "Igrzyska olimpijskie",
+      "Miejsce": "Barcelona"
+    },
+    {
+      "Konkurencja": "Bieg na 3000 metrów z przeszkodami",
+      "Rezultat": "7:53,63",
+      "Zawodnik": "Saif Saaeed Shaheen",
+      "Data": "2004-09-033 września 2004",
+      "Zawody": "Memorial Van Damme",
+      "Miejsce": "Bruksela"
+    },
+    {
+      "Konkurencja": "Sztafeta 4 × 100 metrów",
+      "Rezultat": "36,84",
+      "Zawodnik": "Jamajka\nNesta Carter\nMichael Frater\nYohan Blake\nUsain Bolt",
+      "Data": "2012-08-1111 sierpnia 2012",
+      "Zawody": "Igrzyska olimpijskie",
+      "Miejsce": "Londyn"
+    },
+    {
+      "Konkurencja": "Sztafeta 4 × 400 metrów",
+      "Rezultat": "2:54,29",
+      "Zawodnik": "Stany Zjednoczone\n Andrew Valmon\nQuincy Watts\nButch Reynolds\nMichael Johnson",
+      "Data": "1993-08-2222 sierpnia 1993",
+      "Zawody": "Mistrzostwa świata",
+      "Miejsce": "Stuttgart"
+    },
+    {
+      "Konkurencja": "Chód na 20 kilometrów",
+      "Rezultat": "1:16:36",
+      "Zawodnik": "Yusuke Suzuki",
+      "Data": "2015-03-1515 marca 2015",
+      "Zawody": "Mistrzostwa Azji w chodzie",
+      "Miejsce": "Nomi"
+    },
+    {
+      "Konkurencja": "Chód na 50 kilometrów",
+      "Rezultat": "3:32:33",
+      "Zawodnik": "Yohann Diniz",
+      "Data": "2014-08-1515 sierpnia 2014",
+      "Zawody": "Mistrzostwa Europy",
+      "Miejsce": "Zurych"
+    },
+    {
+      "Konkurencja": "Skok wzwyż",
+      "Rezultat": "2,45",
+      "Zawodnik": "Javier Sotomayor",
+      "Data": "1993-07-2727 lipca 1993",
+      "Zawody": "",
+      "Miejsce": "Salamanka"
+    },
+    {
+      "Konkurencja": "Skok o tyczce",
+      "Rezultat": "6,16",
+      "Zawodnik": "Renaud Lavillenie",
+      "Data": "2014-02-1515 lutego 2014",
+      "Zawody": "",
+      "Miejsce": "Donieck"
+    },
+    {
+      "Konkurencja": "Skok w dal",
+      "Rezultat": "8,95",
+      "Zawodnik": "Mike Powell",
+      "Data": "1991-08-3030 sierpnia 1991",
+      "Zawody": "Mistrzostwa świata",
+      "Miejsce": "Tokio"
+    },
+    {
+      "Konkurencja": "Trójskok",
+      "Rezultat": "18,29",
+      "Zawodnik": "Jonathan Edwards",
+      "Data": "1995-08-077 sierpnia 1995",
+      "Zawody": "Mistrzostwa świata",
+      "Miejsce": "Göteborg"
+    },
+    {
+      "Konkurencja": "Pchnięcie kulą",
+      "Rezultat": "23,12",
+      "Zawodnik": "Randy Barnes",
+      "Data": "1990-05-2020 maja 1990",
+      "Zawody": "",
+      "Miejsce": "Westwood"
+    },
+    {
+      "Konkurencja": "Rzut dyskiem",
+      "Rezultat": "74,08",
+      "Zawodnik": "Jürgen Schult",
+      "Data": "1986-06-066 czerwca 1986",
+      "Zawody": "",
+      "Miejsce": "Neubrandenburg"
+    },
+    {
+      "Konkurencja": "Rzut młotem",
+      "Rezultat": "86,74",
+      "Zawodnik": "Jurij Siedych",
+      "Data": "1986-08-3030 sierpnia 1986",
+      "Zawody": "Mistrzostwa Europy",
+      "Miejsce": "Stuttgart"
+    },
+    {
+      "Konkurencja": "Rzut oszczepem",
+      "Rezultat": "98,48",
+      "Zawodnik": "Jan Železný",
+      "Data": "1996-05-2525 maja 1996",
+      "Zawody": "Mityng EAA",
+      "Miejsce": "Jena"
+    },
+    {
+      "Konkurencja": "Dziesięciobój",
+      "Rezultat": "9126 pkt.",
+      "Zawodnik": "Kévin Mayer",
+      "Data": "2018-09-1616 września 2018",
+      "Zawody": "Decastar",
+      "Miejsce": "Talence"
+    }
+   ]
