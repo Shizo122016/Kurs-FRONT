@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:0;
+        width:100vw;
+        height:100vh;
+      }
+      main{
+        position:relative;
+      }
+      main *{
+        position:absolute;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+</head>
+<body>
+    
+<script>
+	let game = {
+    // życia w grze
+    lives: 5,
+    // obniżanie żyć 
+    decLives(){
+      this.lives--;
+      // dopinamy do dokumentu
+      document.querySelector(".lives").innerHTML = this.lives;
+      // sprawdzamy czy gracz ma jeszcze życia
+      if(this.lives == 0){
+        // game over
+        game.over(false);
+      }
+    },
+		// czas gry
+    time: 10,
+    // interwał do odliczania czasu
+    interval(){
+      
+      this.timer = setInterval(()=>{
+          game.time--;
+          // sprawdź, czy gracz ma jeszcze czas
+          if(game.time == 0){
+            // game over
+            game.over(false);
+          }
+          document.querySelector(".time").innerHTML = game.time;
+        },1000)
+      },
+    // pole gry w dokumencie
+    plane : document.createElement("main"),
+    // ustawianie pola gry
+    setPlane(){
+      // "dopięcie" pola gry do dokumentu
+      document.body.append(this.plane);
+      this.plane.style.border = "2px dashed red";
+
+      // ustawienia wyświetlające pole gry jako kwadrat
+      let dim = 0;
+      if(window.innerWidth > window.innerHeight){
+        dim = window.innerHeight;
+      }else{
+        dim = window.innerWidth;
+      }
+      // ustawiamy nowe wysokości i szerokości elementom w dokumencie
+      this.plane.style.width = dim + "px";
+      this.plane.style.height = dim + "px";
+    
+      document.querySelector(".lives").innerHTML = this.lives;
+      document.querySelector(".time").innerHTML = game.time;
+    },
+    walls: {
+      // tablica zawierająca informacje o ścianach w stage'ach
+      wallsTemplates: [
+      [
+          [0,0,25,5],
+          [0,10,20,5],
+          [25,0,5,20],
+          [15,10,5,20],
+          [15,25,25,5],
+          [35,5,5,20],
+          [35,5,40,5],
+          [70,5,5,40],
+          [95,0,5,40],
+          [75,5,5,5],
+          [80,15,5,5],
+          [80,25,5,5],
+          [85,35,10,5],
+          [85,35,5,20],
+          [40,55,50,5],
+          [55,15,5,70],
+          [45,20,10,5],
+          [35,30,15,5],
+          [35,40,15,5],
+          [35,40,5,20],
+          [25,35,5,60],
+          [0,15,5,85],
+          [10,35,5,50],
+          [10,35,10,5],
+          [10,55,10,5],
+          [10,75,10,5],
+          [20,65,10,5],
+          [20,45,10,5],
+          [20,85,10,5],
+          [10,90,15,5],
+          [30,40,5,5],
+          [35,65,5,35],
+          [45,55,5,35],
+          [50,55,5,35],
+          [35,95,30,5],
+          [60,90,35,5],
+          [60,95,35,5],
+          [65,65,5,25],
+          [75,60,5,25],
+          [85,65,5,25],
+          [90,65,5,25],
+          [90,55,10,5],
+          [95,95,5,5,"meta"],
+          [0,5,5,5,"start"],
+          [0,0,0.3,100],
+          [0,0,100,0.3],
+          [85,0,15,20,"lifes"],
+          [85,20,15,20,"time"]
+        ],
+        [
+          [0,30,50,5]
+    
+        ]
+      ],
+      // budowanie całej mapy z pomocą wallsTemplates i Single wall
+      build(stage = 0){
+        for(w of this.wallsTemplates[stage]){
+            this.singleWall(w[0],w[1],w[2],w[3],w[4]);
+        }
+      },
+      //  budowanie jednego elementu
+      singleWall(x,y,w,h,type = "wall"){
+        let wall = document.createElement("div");
+        game.plane.append(wall);
+        wall.style.width = w + "%";
+        wall.style.height = h + "%";
+        wall.style.marginLeft = x + "%";
+        wall.style.marginTop = y + "%";
+        wall.className = type;
+        // rozróżnienie elementów ze wzgędu na typ
+        if(type == "meta"){
+          wall.style.backgroundColor = "blue";
+        }else if(type == "start"){
+          wall.style.backgroundColor = "green";
+          wall.onclick = () => { game.start(); };
+        }else if(type == "lives" || type == "time" ){
+          wall.style.border = "2px solid #000";
+        }else{
+          wall.style.backgroundColor = "red";  
+        }
+      }
+    },
+    // rozpoczęcie gry
+    start(){
+      console.log("start");
+      this.interval();   
+      // zdejmujemy możliwość rozpoczęcia gry 
+      document.querySelector(".start").onclick = () => {};
+      // dopinamy możliwość wygrania gry, po dotarciu na pole "meta"
+      document.querySelector(".meta").onmouseover = () => {game.over(true);};
+      // pobieramy wszystkie ściany z dokumentu
+      let walls = document.querySelectorAll(".wall");
+      // przypisujemy możliwość "skucia się" na każdej ze ścian
+      for(w of walls){
+        w.onmouseover = () => {this.decLives();}
+      }
+    },
+    // zakończenie gry
+    over(isWin){
+      // "stopujemy" licznik czasu
+      clearInterval(this.timer);
+      // przywracamy wartości domyślne   
+      document.querySelector(".start").onclick = () => {game.start()};
+      document.querySelector(".meta").onmouseover = () => {};
+      let walls = document.querySelectorAll(".wall");
+      for(w of walls){
+        w.onmouseover = () => {}
+      }
+      // sprawdź, czy gracz wygrał, czy przegrał.
+      if(isWin){
+        console.log("wygrałeś");
+      }else{
+        console.log("przegrałeś");
+      }
+      // ustaw domyślne wartości na time i lives
+      this.time = 10;
+      this.lives = 5;
+      document.querySelector(".lives").innerHTML = this.lives;
+      document.querySelector(".time").innerHTML = this.time;
+    }
+	};
+
+  // budujemy pierwszą mapę
+  game.walls.build(0);
+  // ustawiamy rozdzielczość planszy gry
+  game.setPlane();
+
+  // dostosuj rozdzielczość gry po zmianie rozdzielczości przeglądarki
+  window.onresize = ()=>{
+    game.setPlane();
+  }
+
+
+</script>
+</body>
+</html>
