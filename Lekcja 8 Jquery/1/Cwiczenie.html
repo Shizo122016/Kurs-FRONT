@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h3>Przygody Pana Cyfrowego</h3>
+        </div>
+    </div>
+
+    <nav class="subtitle">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+
+    </nav>
+
+    <div class="content">
+        <div class="opis_gif">
+            GIF
+        </div>
+        <div class="desc">
+            OPIS GIFA (Pan Cyfrowy wstaje)
+        </div>
+    </div>
+
+    <div class="footer">
+        Strona stworzona przez Daniela
+    </div>
+
+
+    <script src="js/jquery.js"></script>
+    <script>
+        let data = 
+        [
+            {
+                "src" : "img/gada.gif",
+                "desc" : "Pan cyfrowy gada"
+            },
+
+            {
+                "src" : "img/siada.gif",
+                "desc" : "Pan cyfrowy siada"
+            },
+
+            {
+                "src" : "img/wstaje.gif",
+                "desc" : "Pan cyfrowy wstaje"
+            },
+
+            {
+                "src" : "img/majtanoga.gif",
+                "desc" : "Pan Cyfrowy majta nogą"
+            },
+        ];
+
+        for(let i = 0; i < data.length; i++){
+            let img = createImg(i);
+            let dom = $("nav").children();
+            $(dom[i])
+                .append(img)
+                .click(()=>{
+                    let newImg = createImg(i);
+                    let output = $(".content").children();
+                    console.log(output);
+                    $(output[0]).html(newImg);
+                    $(output[1]).html(data[i].desc);
+                    console.log(i);
+
+                })
+            }
+
+        function createImg(i)
+        {
+            let img = document.createElement("img");
+            $(img).attr({
+                "src":data[i].src,
+                "alt":data[i].desc
+            })
+            return img;
+        }
+
+
+    </script>
+</body>
+</html>

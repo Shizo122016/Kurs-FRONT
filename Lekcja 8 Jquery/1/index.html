@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    
+</head>
+<body>
+    <a>Main Page</a>
+    <p class="s1">Siema</p>
+    <p class="s2">Siema 2</p>
+    <button>Click Me</button>
+    <!-- Dajemy na sam dol ( bo jquery jest ciezkie ) i modul laduje sie na koncu !! Ale przed skryptem z JsQuery !! -->
+    <script src="js/jquery.js"></script>
+    <script>
+    // $("p").hide();
+    // $(".s2").show();
+
+    //Znika po nacisnieciu - toggle dziala ze naprzyklad po nacisnieciu zniknie ale po ponownym pojawi
+
+    // $("button").click( () =>{
+    //     $("p").toggle();
+    // } )
+
+    //Powoli znika (przez 5000 ms - 5 sek)
+
+    // $("button").click( () =>{
+    //     $("p").fadeToggle(5000);
+    // } )
+
+    //Powoli "sliduje" sie w gore 
+
+    // $("button").click( () =>{
+    //     $("p").slideToggle();
+    // } )
+
+    //Animuje dany element przy uzyciu css 
+
+    // $(".s2").animate(
+    //     {
+    //         "margin-left": "20px",
+    //         "margin-top": "60px"
+    //     }
+    // )
+
+    // $(".s2").css({
+    //     "color":"red",
+    //     "border":"2px dashed red"
+    // })
+
+    //Wplywa na to co znajduje sie w elemencie przy uzyciu tagu ( zamienia tekst w s1 na Elo)
+
+    // let v = $(".s1").html("Elo");
+    // console.log(v);
+
+    // let v ="<b> B </b>"
+    // let v2 ="<b> B </b>"
+    // $(".s1").text(v); // Wrzuca jako zwyczajny tekst
+    // $(".s2").html(v2); // Pogrubia jak jest w <b>
+
+    //Dopinamy atrybuty ( Tutaj dodaje hiperlacze (href) do atrybutow elementow a)
+
+    $("a").attr({
+        "href":"http://google.com"
+    })
+
+
+
+    //Tworzenie diva
+    let div = document.createElement("div");
+    //ustawianie argumentow diva 
+    $(div)
+        .attr("class","tenDiv")
+        .text("tenDIV")
+        .css({
+            "background-color":"green",
+            "position":"fixed",
+            "top": 0,
+            "left": 0,
+            "margin":"10px",
+            "padding":"15px",
+            "border":"5px dashed blue",
+            "width":"300px"
+        });
+    
+    $("body").css({
+        "background-color":"grey"
+
+    })
+    //Dopina na poczatku body 
+
+    $("body").prepend(":D")
+
+    //Dopina na koncu body
+
+    $("body").append(":D")
+
+    $("body").prepend(div)
+
+    //Usuwanie z kodu
+
+    // $("div").remove(); // Usuwa divy z kodu
+
+    // $("body").empty(); // Usuwa dzieci z body
+
+    // Operacje na wartosciach danego elementu
+
+    // console.log($(div).width()); // Liczy sama szerokosc
+    // console.log($(div).innerWidth()); // Liczy z paddingiem
+    // console.log($(div).outerWidth()); // Liczy z paddingiem i  borderem
+    // console.log($(div).outerWidth(true)); // Liczy z paddingiem,borderem i marginesem
+
+    //Odnoszenie sie do potomstwa , rodzica itd
+
+    console.log( $(div).parent ); // Odnosi sie do jednego rodzica
+    console.log( $(div).parents ); // Odnosi sie do rodziców , dziadków itd
+    
+
+    </script>
+</body>
+</html>
