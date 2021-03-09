@@ -7,14 +7,16 @@ function myMove() {
   var elem2 = document.getElementById("prawe");
   var pos = 0;
   clearInterval(id);
-  id = setInterval(frame, 5);
+  id = setInterval(frame, 3);
   function frame() {
-    if (pos == -700) {
+    if (pos == 700) {
       clearInterval(id);
+      document.getElementById("lewe").remove();
+      document.getElementById("prawe").remove();
     } else {
-      pos--;
-      elem.style.left = pos + 'px';
-      elem2.style.right = pos + 'px';
+      pos++;
+      elem2.style.left = pos + 'px';
+      elem.style.right = pos + 'px';
     }
   }
 }
