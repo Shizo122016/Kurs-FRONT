@@ -15,8 +15,8 @@ function myMove() {
       document.getElementById("prawe").remove();
     } else {
       pos++;
-      elem2.style.left = pos + 'px';
-      elem.style.right = pos + 'px';
+      elem2.style.top = pos + 'px';
+      elem.style.bottom = pos + 'px';
     }
   }
 }
