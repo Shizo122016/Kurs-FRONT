@@ -1,3 +1,6 @@
+
+
+//Skrypt poruszania sie drzwi!
 var id = null;
 function myMove() {
   var elem = document.getElementById("lewe");
@@ -10,8 +13,8 @@ function myMove() {
       clearInterval(id);
     } else {
       pos--;
-      elem.style.right = -pos + 'px';
-      elem2.style.left = -pos + 'px';
+      elem.style.left = pos + 'px';
+      elem2.style.right = pos + 'px';
     }
   }
 }
